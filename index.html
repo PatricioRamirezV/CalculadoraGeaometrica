@@ -9,34 +9,40 @@
 <body>
 <div class="bg">
 
-    <form name="calculadora" action="" method="POST">
+    <form name="calculadora" method="POST">
         <h1>Calculadora Geométrica</h1>
         <table>
             <tr>
-                <td colspan="5"><input type="text" name="resultado" value="" class="result" readonly></td>
+                <td colspan="4"><input type="text" name="resultado" value="" class="result" readonly></td>
+                <td><input name="circulo" type="button" value="Limpiar" class="btn btn-success" onclick="clean();"></td>
             </tr>
             <tr>
                 <br>
             </tr>
             <tr>
-            <td><label class="texto">Área del</label></td>
-                <td><label class="texto">Circulo</label></td>
-                <td colspan="1"><input name="radio" type="number" value="" class="text" placeholder="Radio" onclick="clean('radio');" ></td>
-                <td><input name="circulo" type="button" value="Calcular" class="btn" onclick="calcular('circulo');"></td>
+                <td colspan="2"><label class="texto">Área  y  Perimetro </label></td>
+                <td ><input name="radio" type="number" value="" class="text" placeholder="Radio" ></td>
+                <td ></td>
+                <td><input name="circulo" type="button" value="Circulo" class="btn" onclick="calcular('circulo');"></td>
             </tr>
             <tr>
-                <td><label class="texto">Área del</label></td>
-                <td><label class="texto">Cuadrilatero</label></td>
-                <td colspan="1"><input name="largo" type="number" value="" class="text" placeholder="Largo" onclick="clean('largo');" ></td>
-                <td colspan="1"><input name="ancho" type="number" value="" class="text" placeholder="Ancho" onclick="clean('ancho');" ></td>
-                <td><input name="cuadrilatero" type="button" value="Calcular" class="btn" onclick="calcular('cuadrilatero');"></td>
+                <td colspan="2"><label class="texto">Área  y  Perimetro </label></td>
+                <td ><input name="largo" type="number" value="" class="text" placeholder="Largo" ></td>
+                <td ><input name="ancho" type="number" value="" class="text" placeholder="Ancho" ></td>
+                <td><input name="cuadrilatero" type="button" value="Cuadrado" class="btn" onclick="calcular('cuadrilatero');"></td>
             </tr>
             <tr>
-                <td><label class="texto">Área del</label></td>
-                <td><label class="texto">Triangulo</label></td>
-                <td colspan="1"><input name="altura" type="number" value="" class="text" placeholder="Alto" onclick="clean('altura');" ></td>
-                <td colspan="1"><input name="base" type="number" value="" class="text" placeholder="Base" onclick="clean('base');" ></td>
-                <td><input name="triangulo" type="button" value="Calcular" class="btn" onclick="calcular('triangulo');"></td>
+                <td colspan="2"><label class="texto">Triangulo </label></td>
+                <td ><input name="altura" type="number" value="" class="text" placeholder="Alto" ></td>
+                <td ><input name="base" type="number" value="" class="text" placeholder="Base" ></td>
+                <td><input name="areaTriangulo" type="button" value="Área" class="btn" onclick="calcular('areaTriangulo');"></td>
+            </tr>
+            <tr>
+                <td ><label class="texto">Triangulo </label></td>
+                <td ><input name="lado1" type="number" value="" class="text" placeholder="lado 1" ></td>
+                <td ><input name="lado2" type="number" value="" class="text" placeholder="lado 2" ></td>
+                <td ><input name="lado3" type="number" value="" class="text" placeholder="lado 3" ></td>
+                <td><input name="perTriangulo" type="button" value="Perimetro" class="btn" onclick="calcular('perTriangulo');"></td>
             </tr>
             
         </table>

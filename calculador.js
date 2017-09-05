@@ -1,67 +1,56 @@
 function calcular(figura){
-    var result;
+    var area = 0;
+    var perimetro = 0;
     var radio = document.calculadora.radio.value;
     var largo = document.calculadora.largo.value;
     var ancho = document.calculadora.ancho.value;
     var base = document.calculadora.base.value;
     var altura = document.calculadora.altura.value;
-    if(radio!='' || ancho!='' && largo!='' || base!='' && altura!=''){
+    var lado1 = document.calculadora.lado1.value;
+    var lado2 = document.calculadora.lado2.value;
+    var lado3 = document.calculadora.lado3.value;
+
+    if(radio!='' || ancho!='' && largo!='' || base!='' && altura!=''|| lado1!='' && lado2!='' && lado3!=''){
 
         switch (figura){
             case 'circulo':
-                result = radio*radio*3.1416
+                area = 'A: ' + radio*radio*3.1416
+                perimetro = ' - P: ' + 2*radio*3.1416
             break;
             case 'cuadrilatero':
-                result = largo*ancho
+                area = 'A: ' + largo*ancho
+                perimetro = ' - P: ' + (2*largo+2*ancho)
             break;
-            case 'triangulo':
-                result = (base*altura)/2
+            case 'areaTriangulo':
+                area = (base*altura)/2
+            break;
+             case 'perTriangulo':
+                perimetro = (-lado1-lado2-lado3)*-1
             break;
             default:
-                result=0;
+                area=0;
+                perimetro=0;
 
         }
-        document.calculadora.resultado.value = result
+        document.calculadora.resultado.value = area + perimetro
     
    }
    else{
     document.calculadora.resultado.value = 'Debe completar los campos';
     } 
 }
-function clean(value) {
+function clean() {
 
     document.calculadora.resultado.value='';
-    switch (value){
-        case'radio':
-            document.calculadora.largo.value='';
-            document.calculadora.ancho.value='';
-            document.calculadora.base.value='';
-            document.calculadora.altura.value='';
-        break;
-        case'largo':
-            document.calculadora.radio.value='';
-            document.calculadora.base.value='';
-            document.calculadora.altura.value='';
-        break;
-        case'ancho':
-            document.calculadora.radio.value='';
-            document.calculadora.base.value='';
-            document.calculadora.altura.value='';
-        break;
-        case'altura':
-            document.calculadora.radio.value='';
-            document.calculadora.largo.value='';
-            document.calculadora.ancho.value='';
-        break;
-        case'base':
-            document.calculadora.radio.value='';
-            document.calculadora.largo.value='';
-            document.calculadora.ancho.value='';
-        break;
-        default:
-            document.calculadora.resultado.value='';
-
-    }
+    document.calculadora.radio.value='';
+    document.calculadora.largo.value='';
+    document.calculadora.ancho.value='';
+    document.calculadora.base.value='';
+    document.calculadora.altura.value='';
+    document.calculadora.lado1.value='';
+    document.calculadora.lado2.value='';
+    document.calculadora.lado3.value='';
+        
     return ;
     
     
